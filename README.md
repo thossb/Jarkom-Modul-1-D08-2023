@@ -51,7 +51,7 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 2. Jawaban   : gunicorn
 - Langkah   : <br> 
 filter display : frame contains “Jarkom” <br> 
-Pilih ip yang ke filter, lalu follow tcp stream <br>
+Pilih ip yang ke filter, lalu follow tcp stream <br><br>
 ![Foto](./img/modul1_nomer2.png)
 ```
 HTTP/1.1 200 OK
@@ -72,14 +72,14 @@ Set-Cookie: session=1f6be1b9-b4e9-484f-b90b-ffca6f74fc72.vvasSxMXgw2D85_iBS4fJKR
 3. Jawaban   : A. 21 | B.UDP <br> 
 - Langkah   :  <br> 
 Filter : ip.addr == 239.255.255.250 and udp.port == 3702 <br> 
-Bisa dilihat ada 21 hasil dan semuanya protokol UDP <br> 
+Bisa dilihat ada 21 hasil dan semuanya protokol UDP <br><br>
 ![Foto](./img/modul1_nomer3.png)
 - Kesulitan : -
 
 4. Jawaban   : 0x18e5 <br> 
 - Langkah   : <br> 
 Lihat paket nomor 130 <br>
-Liat user datagram protocol, kemudian lihat tabel checksum <br>
+Liat user datagram protocol, kemudian lihat tabel checksum <br><br>
 ![Foto](./img/modul1_nomer4.png)
 - Kesulitan : -
 
@@ -109,18 +109,17 @@ NWltcGxlUGFzNXdvcmQ=
 
 7. Jawaban   : 6
 - Langkah   :
-Hal ini dapat kita cek dengan menggunakan query ip.dst == 184.87.193.88. Setelah itu kita hitung dan hasilnya ada 6 paket. <br>
+Hal ini dapat kita cek dengan menggunakan query ip.dst == 184.87.193.88. Setelah itu kita hitung dan hasilnya ada 6 paket. <br><br>
 ![Foto](./img/modul1_nomer7.png)
 - Kesulitan : -
 
 8. Jawaban   : tcp.dstport == 80 || udp.dstport == 80 <br>
-- Langkah   : Menggunakan query <br>
+- Langkah   : Menggunakan query <br><br>
 ![Foto](./img/modul1_nomer8.png)
 - Kesulitan : -
 
 9. Jawaban   : ip.src == 10.51.40.1 && ip.dst != 10.39.55.34 <br>
-- Langkah   : Menggunakan query <br>
-
+- Langkah   : Menggunakan query 
 - Kesulitan : -
 
 10. Jawaban   :
