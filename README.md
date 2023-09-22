@@ -3,7 +3,7 @@
 Nama Anggota | NRP
 ------------------- | --------------		
 Timothy Hosia Budianto | 5025211098
-Arief Nugraha Santoso | 5025211048
+Arif Nugraha Santosa | 5025211048
 
 ## SOAL
 1. User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya
