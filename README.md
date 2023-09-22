@@ -57,7 +57,8 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 - #### Langkah:
   Pertama - tama, lakukan filtering agar mendapatkan frame yang menggunakan protokol `ftp` seperti gambar di bawah
   ![Foto](./img/modul1_nomer1a.png)
-
+  Atau menggunakan filter display: `frame contains "STOR"`
+  ![Foto](./img/modul1_nomer1d.png)
   Lalu cek bagian info yang menggunakan Request berupa `STOR` seperti pada gambar di atas (STOR merupakan request untuk mengunggah suatu file. Kemudian klik 2x pada tab tersebut).
   ![Foto](./img/modul1_nomer1b.png)
   Untuk soal a dan b. Pilih TCP dan cek sequence number (raw) dan acknowledgement number (raw).
@@ -66,15 +67,16 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
   Kemudian untuk soal c dan d, kita harus mencari response dari request `STOR` tersebut. Frame yang menujukan response request `STOR` adalah frame setelah request tersebut yaitu frame nomor 149.
   ![Foto](./img/modul1_nomer1c.png)
   Seperti yang kita lihat pada gambar di atas, `sequence number (raw)nya` mirip dengan acknowledgment number (raw) dari request yaitu `1044861039`. Dan `acknowledgement rumber (raw)` mirip dengan sequence number requestnya yaitu `258040696`.
+  ![Foto](./img/modul1_nomer1ans.png) 
 
 - #### Kesulitan:
-  Sempat bingung dalam mencari request STOR, apakah bisa menggunakan query filtering?
+  Tidak ada
 
 ### 2. Jawaban: 
     gunicorn
 - #### Langkah:
-  filter display : frame contains “Jarkom” <br> 
-  Pilih ip yang ke filter, lalu follow tcp stream <br><br>
+  Lakukan filter display : `frame contains “Jarkom”` <br> 
+  Pilih IP yang  terfilter, lalu follow TCP Stream <br><br>
   ![Foto](./img/modul1_nomer2.png)
   ```
   HTTP/1.1 200 OK
@@ -97,8 +99,8 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
     a. 21
     b. UDP
 - #### Langkah:
-  Filter : ip.addr == 239.255.255.250 and udp.port == 3702 <br> 
-  Bisa dilihat ada 21 hasil dan semuanya protokol UDP <br><br>
+  lakukan filter : `ip.addr == 239.255.255.250 and udp.port == 3702` <br> 
+  Dapat kita lihat, ada 21 paket dan semuanya menggunakan protokol UDP <br>
   ![Foto](./img/modul1_nomer3.png)
 - #### Kesulitan:
   Tidak ada.
@@ -106,8 +108,8 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 ### 4. Jawaban:
     0x18e5
 - #### Langkah:
-  Lihat paket nomor 130 <br>
-  Liat user datagram protocol, kemudian lihat tabel checksum <br>
+  Pertama kita lihat paket nomor `130`. <br>
+  Lalu lihat **User Datagram Protocol**, kemudian lihat tabel **Checksum** <br>
   ![Foto](./img/modul1_nomer4.png)
 - #### Kesulitan:
   Tidak ada.
@@ -139,13 +141,28 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
   Mencari password file .txt
 
 ### 6. Jawaban:
+    JDRNJA
 - #### Langkah:
+  Simplenya, soal ini meminta kita untuk mencari hasil string sebanyak 6 karakter sesuai dengan hint yang diberikan:
+  ![Foto](./img/modul1_nomer6a.png)
+  
+  Langkah pertama yang kita butuhkan adalah membuka file capture dan memilih frame nomor 7812. <br>
+  ![Foto](./img/modul1_nomer6b.png)
+
+  Setelah mendapatkan framenya, sesuai dengan **HINT** terakhir yaitu `SOURCE ADDRESS ADALAH KUNCI SEMUANYA` kita akan melakukan decode pada source addressnya yaitu `104 18 14 101`. Untuk decode, kita akan menggunakan `cipher substitusi A1Z26`. Setelah kita decode, didapat jawaban di bawah.
+  ![Foto](./img/modul1_nomer6c.png)
+
+  Kita sudah mendapatkan beberapa string dengan maksimal 6 digit. Kita lihat hint ke 3 `Rentang huruf yang digunakan Huruf A-R, 1-18 dengan jawaban 6 huruf`. Dari hint tersebut kita akan melihat jawaban dari string yang telah didecode. Setelah dicoba, hasil yang benar adalah string `JDRNJA`.
+  ![Foto](./img/modul1_nomer6d.png)
+
 - #### Kesulitan:
+  - Ketidakjelasan pada apa yang diminta pada soal, harus membuka hint untuk menyelesaikannya.
+  - Kesulitan menentukan cipher yang digunakan dan apa yang harus didecode
 
 ### 7. Jawaban:
     6
 - #### Langkah:
-  Hal ini dapat kita cek dengan menggunakan query `ip.dst == 184.87.193.88`. Setelah itu kita hitung dan hasilnya ada 6 paket.
+  Soal ini dapat diselesaikan dengan menggunakan query `ip.dst == 184.87.193.88`. Setelah itu kita hitung jumlah paketnya, hasilnya ada 6 paket.
   ![Foto](./img/modul1_nomer7.png)
 - #### Kesulitan:
   Tidak ada.
@@ -166,7 +183,24 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 - #### Kesulitan:
   Tidak ada.
 
-### 10. Jawaban   :
+### 10. Jawaban:
+    dhafin:kesayangannyak0k0
 - #### Langkah:
+  Soal ini meminta kita untuk mencari kredensial yang benar ketika user mencoba login menggunakan Telnet. Pertama-tama, kita gunakanan filter `telnet` untuk mencari frame yang menggunakan protokol `telnet`.
+  ![Foto](./img/modul1_nomer10a.png)
+
+  Kemudian kita akan menuju frame terbawah, karena kami berasumsi apabila user sudah melakukan login atau terkoneksi, maka frame paling bawah seharusnya mengandung kredensial. Setelah kita berada di frame paling bawah, lakukan `Follow -> TCP Stream` seperti pada gambar di bawah
+  ![Foto](./img/modul1_nomer10b.png)
+
+  Lalu apabila kita perhatikan kita akan mendapatkan kredensialnya seperti gambar di bawah:
+  ![Foto](./img/modul1_nomer10c.png)
+
+  Setelah dicoba dimasukan ke nc, hasilnya tidak langsung benar, username tersebut memiliki char yang double. Sehingga kredensial yang benar adalah
+  ```
+  Username: dhafin
+  Password: kesayangannyak0k0
+  ```
+  Hasilnya:
+  ![Foto](./img/modul1_nomer10ans.png)
 - #### Kesulitan:
   Tidak ada.
