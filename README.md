@@ -14,18 +14,18 @@ Arif Nugraha Santosa | 5025211048
 
 2. Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 
-3. Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
-- a. Berapa banyak paket yang tercapture dengan IP source maupun destination
-address adalah 239.255.255.250 dengan port 3702?
-- b. Protokol layer transport apa yang digunakan?
+3. Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut: <br>
+  a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702? <br>
+  b. Protokol layer transport apa yang digunakan? <br>
 
 4. Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 
 5. Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk
-menganalisis file packet capture tersebut.
-- a. Berapa banyak packet yang berhasil di capture dari file pcap tersebut?
-- b. Port berapakah pada server yang digunakan untuk service SMTP?
-- c. Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?
+menganalisis file packet capture tersebut. <br>
+  a. Berapa banyak packet yang berhasil di capture dari file pcap tersebut?<br>
+  b. Port berapakah pada server yang digunakan untuk service SMTP?<br>
+  c. Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?<br>
+  
 Soal 6-7 menggunakan file pcap yang sama.
 
 6. Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang
@@ -48,15 +48,13 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 
 ## Jawaban
 
-1. Jawaban   :
-<ol type="a">
-  <li>Sequence number (raw) = 258040667</li>
-  <li>Acknowledgment number (raw) = 1044861039</li>
-  <li>Sequence number (raw) = 1044861039</li>
-  <li>Acknowledgment number (raw) = 258040696</li>
-</ol>
+### 1. Jawaban:
+    a. Sequence number (raw) = 258040667
+    b. Acknowledgment number (raw) = 1044861039
+    c. Sequence number (raw) = 1044861039
+    d. Acknowledgment number (raw) = 258040696
 
-- Langkah   :
+- #### Langkah:
   Pertama - tama, lakukan filtering agar mendapatkan frame yang menggunakan protokol `ftp` seperti gambar di bawah
   ![Foto](./img/modul1_nomer1a.png)
 
@@ -72,7 +70,7 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 - Kesulitan : Sempat bingung dalam mencari request STOR, apakah bisa menggunakan query filtering?
 
 2. Jawaban   : gunicorn
-- Langkah   : <br> 
+- #### Langkah:
 filter display : frame contains “Jarkom” <br> 
 Pilih ip yang ke filter, lalu follow tcp stream <br><br>
 ![Foto](./img/modul1_nomer2.png)
@@ -93,21 +91,21 @@ Set-Cookie: session=1f6be1b9-b4e9-484f-b90b-ffca6f74fc72.vvasSxMXgw2D85_iBS4fJKR
 - Kesulitan : -
 
 3. Jawaban   : A. 21 | B.UDP <br> 
-- Langkah   :  <br> 
+- #### Langkah:
 Filter : ip.addr == 239.255.255.250 and udp.port == 3702 <br> 
 Bisa dilihat ada 21 hasil dan semuanya protokol UDP <br><br>
 ![Foto](./img/modul1_nomer3.png)
 - Kesulitan : -
 
 4. Jawaban   : 0x18e5 <br> 
-- Langkah   : <br> 
+- #### Langkah:
 Lihat paket nomor 130 <br>
 Liat user datagram protocol, kemudian lihat tabel checksum <br><br>
 ![Foto](./img/modul1_nomer4.png)
 - Kesulitan : -
 
 5. Jawaban   : A. 60 | B. 25 | C. 74.53.140.153 <br>
-- Langkah   : <br>
+- #### Langkah:
 A. Ada 60 packet yang ada <br>
 B. Port smtp adalah 25 <br>
 C. Yang public ip, adalah ip diluar
@@ -127,24 +125,24 @@ NWltcGxlUGFzNXdvcmQ=
 - Kesulitan : Mencari password file txt
 
 6. Jawaban   :
-- Langkah   :
+- #### Langkah:
 - Kesulitan :
 
 7. Jawaban   : 6
-- Langkah   :
+- #### Langkah:
 Hal ini dapat kita cek dengan menggunakan query ip.dst == 184.87.193.88. Setelah itu kita hitung dan hasilnya ada 6 paket. <br><br>
 ![Foto](./img/modul1_nomer7.png)
 - Kesulitan : -
 
 8. Jawaban   : tcp.dstport == 80 || udp.dstport == 80 <br>
-- Langkah   : Menggunakan query <br><br>
+- #### Langkah: Menggunakan query <br><br>
 ![Foto](./img/modul1_nomer8.png)
 - Kesulitan : -
 
 9. Jawaban   : ip.src == 10.51.40.1 && ip.dst != 10.39.55.34 <br>
-- Langkah   : Menggunakan query 
+- #### Langkah: Menggunakan query 
 - Kesulitan : -
 
 10. Jawaban   :
-- Langkah   :
+- #### Langkah:
 - Kesulitan :
