@@ -38,3 +38,15 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 10. Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
 
 ## Jawaban
+## Jawaban
+1. Jawaban  :
+2. Jawaban  : Gunicorn 
+   Langkah  : 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
