@@ -143,7 +143,7 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 ### 6. Jawaban:
     JDRNJA
 - #### Langkah:
-  Simplenya, soal ini meminta kita untuk mencari hasil string sebanyak 6 karakter sesuai dengan hint yang diberikan:
+  Simplenya, soal ini meminta kita untuk mencari hasil string sebanyak 6 karakter sesuai dengan hint yang diberikan:<br>
   ![Foto](./img/modul1_nomer6a.png)
   
   Langkah pertama yang kita butuhkan adalah membuka file capture dan memilih frame nomor 7812. <br>
@@ -204,3 +204,7 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
   ![Foto](./img/modul1_nomer10ans.png)
 - #### Kesulitan:
   Tidak ada.
+
+<br>
+
+### THANK U MODUL 1!
