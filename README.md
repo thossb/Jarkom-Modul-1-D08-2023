@@ -45,7 +45,22 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
 ## Jawaban
 
 1. Jawaban   :
+  a. Sequence number (raw) = 258040667
+  b. Acknowledgment number (raw) = 1044861039
+  c. Sequence number (raw) = 1044861039
+  d. Acknowledgment number (raw) = 258040696
 - Langkah   :
+Pertama - tama, lakukan filtering agar mendapatkan frame yang menggunakan protokol ftp seperti gambar di bawah
+![Foto](./img/modul1_nomer1a.png)
+Lalu cek bagian info yang menggunakan Request berupa STOR (mengunggah suatu file. Kemudian klik 2x pada tab tersebut).
+![Foto](./img/modul1_nomer1b.png)
+Untuk soal a dan b. Pilih TCP dan cek sequence number (raw) dan acknowledgement number (raw).
+Didapat Sequence number (raw) = 258040667 dan Acknowledgment number (raw) = 1044861039.
+
+Kemudian untuk soal c dan d, kita harus mencari response dari request STOR tersebut. Frame yang menujukan response request STOR adalah frame setelah request tersebut yaitu frame nomor 149.
+![Foto](./img/modul1_nomer1c.png)
+Seperti yang kita lihat pada gambar di atas, sequence number (raw)nya mirip dengan acknowledgment number (raw) dari request yaitu 1044861039. Dan acknowledgement rumber (raw) mirip dengan sequence number requestnya yaitu 258040696.
+
 - Kesulitan :
 
 2. Jawaban   : gunicorn
