@@ -6,13 +6,11 @@ Timothy Hosia Budianto | 5025211098
 Arif Nugraha Santosa | 5025211048
 
 ## SOAL
-1. User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file.
-<ol type="a">
-  <li>Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?</li>
-  <li>Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?</li>
-  <li>Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?</li>
-  <li>Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?</li>
-</ol>
+1. User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file. <br>
+  a.  Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut? <br>
+  b.  Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut? <br>
+  c.  Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut? <br>
+  d.  Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
 
 2. Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 
