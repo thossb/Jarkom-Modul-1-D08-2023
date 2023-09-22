@@ -26,7 +26,7 @@ menganalisis file packet capture tersebut. <br>
   b. Port berapakah pada server yang digunakan untuk service SMTP?<br>
   c. Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?<br>
   
-Soal 6-7 menggunakan file pcap yang sama.
+**Soal 6-7 menggunakan file pcap yang sama.**
 
 6. Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang
 penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk
@@ -67,82 +67,106 @@ menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abj
   ![Foto](./img/modul1_nomer1c.png)
   Seperti yang kita lihat pada gambar di atas, `sequence number (raw)nya` mirip dengan acknowledgment number (raw) dari request yaitu `1044861039`. Dan `acknowledgement rumber (raw)` mirip dengan sequence number requestnya yaitu `258040696`.
 
-- Kesulitan : Sempat bingung dalam mencari request STOR, apakah bisa menggunakan query filtering?
+- #### Kesulitan:
+  Sempat bingung dalam mencari request STOR, apakah bisa menggunakan query filtering?
 
-2. Jawaban   : gunicorn
+### 2. Jawaban: 
+    gunicorn
 - #### Langkah:
-filter display : frame contains “Jarkom” <br> 
-Pilih ip yang ke filter, lalu follow tcp stream <br><br>
-![Foto](./img/modul1_nomer2.png)
-```
-HTTP/1.1 200 OK
-Server: gunicorn
-Date: Thu, 14 Sep 2023 12:52:59 GMT
-Connection: keep-alive
-Content-Type: text/html; charset=utf-8
-Content-Length: 7761
-Set-Cookie: session=1f6be1b9-b4e9-484f-b90b-ffca6f74fc72.vvasSxMXgw2D85_iBS4fJKREF5U; HttpOnly; Path=/; SameSite=Lax
+  filter display : frame contains “Jarkom” <br> 
+  Pilih ip yang ke filter, lalu follow tcp stream <br><br>
+  ![Foto](./img/modul1_nomer2.png)
+  ```
+  HTTP/1.1 200 OK
+  Server: gunicorn
+  Date: Thu, 14 Sep 2023 12:52:59 GMT
+  Connection: keep-alive
+  Content-Type: text/html; charset=utf-8
+  Content-Length: 7761
+  Set-Cookie: session=1f6be1b9-b4e9-484f-b90b-ffca6f74fc72.vvasSxMXgw2D85_iBS4fJKREF5U; HttpOnly; Path=/; SameSite=Lax
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Praktikum Jarkom 2023</title>
-```
-- Kesulitan : -
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Praktikum Jarkom 2023</title>
+  ```
+- #### Kesulitan:
+  Tidak ada.
 
-3. Jawaban   : A. 21 | B.UDP <br> 
+### 3. Jawaban: 
+    a. 21
+    b. UDP
 - #### Langkah:
-Filter : ip.addr == 239.255.255.250 and udp.port == 3702 <br> 
-Bisa dilihat ada 21 hasil dan semuanya protokol UDP <br><br>
-![Foto](./img/modul1_nomer3.png)
-- Kesulitan : -
+  Filter : ip.addr == 239.255.255.250 and udp.port == 3702 <br> 
+  Bisa dilihat ada 21 hasil dan semuanya protokol UDP <br><br>
+  ![Foto](./img/modul1_nomer3.png)
+- #### Kesulitan:
+  Tidak ada.
 
-4. Jawaban   : 0x18e5 <br> 
+### 4. Jawaban:
+    0x18e5
 - #### Langkah:
-Lihat paket nomor 130 <br>
-Liat user datagram protocol, kemudian lihat tabel checksum <br><br>
-![Foto](./img/modul1_nomer4.png)
-- Kesulitan : -
+  Lihat paket nomor 130 <br>
+  Liat user datagram protocol, kemudian lihat tabel checksum <br>
+  ![Foto](./img/modul1_nomer4.png)
+- #### Kesulitan:
+  Tidak ada.
 
-5. Jawaban   : A. 60 | B. 25 | C. 74.53.140.153 <br>
+### 5. Jawaban: 
+    a. 60
+    b. 25
+    c. 74.53.140.153
 - #### Langkah:
-A. Ada 60 packet yang ada <br>
-B. Port smtp adalah 25 <br>
-C. Yang public ip, adalah ip diluar
-```
-10.0.0.0 — 10.255.255.255
-172.16.0.0 — 172.31.255.255
-192.168.0.0 — 192.168.255.255
-```
-Untuk unlock file txt untuk dapat nc, Follow salah satu data capture yang memiliki protocol smtp, akan menghasilkan
-```
-Hello
-I send u a p45sword of a zip file, but you should decode it in Base64.
-Here is the p45sword:
-NWltcGxlUGFzNXdvcmQ=
-```
-![Foto](./img/modul1_nomer5.png)
-- Kesulitan : Mencari password file txt
+  a. Ada 60 packet yang terdeteksi <br>
+  b. Port SMTP adalah 25 <br>
+  c. Public IP, adalah IP diluar list berikut<br>
+  ```
+  10.0.0.0 — 10.255.255.255
+  172.16.0.0 — 172.31.255.255
+  192.168.0.0 — 192.168.255.255
+  ```
+  Untuk mengunlock file .txt untuk dapat yang berisi netcatnya, Follow salah satu data capture yang memiliki protocol SMTP, maka akan menghasilkan
+  ![Foto](./img/modul1_nomer5.png)
+    ```
+  Hello
+  I send u a p45sword of a zip file, but you should decode it in Base64.
+  Here is the p45sword:
+  NWltcGxlUGFzNXdvcmQ=
+  ```
+  Setelah kita decode passwordnya dengan base64, hasil passwordnya adalah
+  `5implePas5word`
+- #### Kesulitan:
+  Mencari password file .txt
 
-6. Jawaban   :
+### 6. Jawaban:
 - #### Langkah:
-- Kesulitan :
+- #### Kesulitan:
 
-7. Jawaban   : 6
+### 7. Jawaban:
+    6
 - #### Langkah:
-Hal ini dapat kita cek dengan menggunakan query ip.dst == 184.87.193.88. Setelah itu kita hitung dan hasilnya ada 6 paket. <br><br>
-![Foto](./img/modul1_nomer7.png)
-- Kesulitan : -
+  Hal ini dapat kita cek dengan menggunakan query `ip.dst == 184.87.193.88`. Setelah itu kita hitung dan hasilnya ada 6 paket.
+  ![Foto](./img/modul1_nomer7.png)
+- #### Kesulitan:
+  Tidak ada.
 
-8. Jawaban   : tcp.dstport == 80 || udp.dstport == 80 <br>
-- #### Langkah: Menggunakan query <br><br>
-![Foto](./img/modul1_nomer8.png)
-- Kesulitan : -
-
-9. Jawaban   : ip.src == 10.51.40.1 && ip.dst != 10.39.55.34 <br>
-- #### Langkah: Menggunakan query 
-- Kesulitan : -
-
-10. Jawaban   :
+### 8. Jawaban: 
+    tcp.dstport == 80 || udp.dstport == 80
 - #### Langkah:
-- Kesulitan :
+  Menggunakan query `tcp.dstport == 80 || udp.dstport == 80`
+  ![Foto](./img/modul1_nomer8.png)
+- #### Kesulitan:
+  Tidak ada.
+
+### 9. Jawaban:
+    ip.src == 10.51.40.1 && ip.dst != 10.39.55.34
+- #### Langkah:
+  Menggunakan query `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`<br>
+  **Tidak menggunakan gambar karena IP tersebut tidak ada dalam paket yang diberikan**
+- #### Kesulitan:
+  Tidak ada.
+
+### 10. Jawaban   :
+- #### Langkah:
+- #### Kesulitan:
+  Tidak ada.
